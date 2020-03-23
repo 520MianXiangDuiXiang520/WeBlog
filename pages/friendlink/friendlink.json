@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Tags",
+  "usingComponents": {
+    "wux-row": "../../lib/row/index",
+    "wux-col": "../../lib/col/index",
+    "wux-divider": "../../lib/divider/index"
+  }
+}

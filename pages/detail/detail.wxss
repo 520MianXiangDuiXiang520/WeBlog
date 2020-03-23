@@ -1,0 +1,26 @@
+/* pages/detail/detail.wxss */
+/**主题配色（深色样式）**/
+@import '/towxml/style/main.wxss';
+@import '/towxml/style/theme/dark.wxss';
+.main{
+  background-color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: 100%;
+}
+
+.title{
+  font-size: 38rpx;
+  color:#fff;
+  font-family: FZYaoti;
+  padding: 20rpx
+}
+
+.create_time{
+  font-size: 20rpx;
+  color:#fff;
+  font-family: FZYaoti;
+  padding-top: 10rpx;
+  padding-left: 550rpx;
+  padding-bottom: 20rpx;
+}
+

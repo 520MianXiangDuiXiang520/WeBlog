@@ -1,0 +1,30 @@
+<!--pages/detail/detail.wxml-->
+<import src="/towxml/entry.wxml"/>
+<loading hidden="{{firstloadingHidden}}">
+        文章加载中...
+</loading>
+<loading hidden="{{loadingHidden}}">
+        文章渲染中...
+</loading>
+<view class='main'>
+  <view class='header'>
+    <view class='title'>
+      <text>{{title}}</text>
+    </view>
+
+    <view class='create_time'>
+    <text>{{create_time}}</text>
+    </view>
+
+    <view class='tags'>
+    
+    </view>
+  </view>
+
+  <view class='main'>
+  <template is="entry" data="{{...article}}"/>
+  </view>
+
+  <view class='footer'>
+  </view>
+</view>

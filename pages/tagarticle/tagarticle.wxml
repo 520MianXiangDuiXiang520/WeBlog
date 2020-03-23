@@ -1,0 +1,21 @@
+<!--pages/tagarticle/tagarticle.wxml-->
+
+<image class='background' src="../../static/image/bg/bg.png" mode="aspectFill"></image>
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>
+<view class='book_list'>
+  <view wx:for="{{ibooklist}}" wx:key="index" class="blog_main" >
+    <view class='book_info' bindtap="detail" data-index='{{item.id}}'>
+      <view class="book_text">
+      
+        <text class='book_name'>{{item.title}}</text>
+        <text class='article_time'>{{item.create_time}}</text>
+        <text class='book_introduction'>{{item.abstract}}</text>
+        
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{!noinfo}}" class='more' bindtap='more'><image src='../../static/image/icon/touch.png'></image>轻触加载</view>
+  <view wx:if="{{noinfo}}" class='more' bindtap='more'>到底了...</view>
+</view>

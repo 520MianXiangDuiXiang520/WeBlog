@@ -1,0 +1,19 @@
+/* pages/friendlink/friendlink.wxss */
+@import '../../lib/styles/index.wxss';
+.background {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+}
+.tagname{
+  font-size: 54rpx;
+  margin-bottom: 16rpx;
+}
+.main{
+  margin: 30rpx;
+}
+.tag{
+  border: 11rpx;
+}

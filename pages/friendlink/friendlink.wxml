@@ -1,0 +1,41 @@
+<!--pages/friendlink/friendlink.wxml-->
+<image class='background' src="../../static/image/bg/bg.png" mode="aspectFill"></image>
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>
+<view class='main'>
+  <view class="page__bd">
+        <wux-row>
+            <wux-col bindtap="detail" data-index='{{item.id}}' span="12" wx:for="{{tags}}" wx:key="index" >
+              <view class="tag">
+                <wux-row>
+                <!-- 标签名 -->
+              <wux-col span="12">
+                <view class='tagname'>
+                  <view class="placeholder">{{item.name}}</view>
+                </view>
+              </wux-col>
+            </wux-row>
+            <wux-row>
+            <!-- 标签创建时间 -->
+              <wux-col span="8">
+                <view class='tagtime'>
+                  <view class="placeholder">创建时间：{{item.create_time}}</view>
+                </view>
+              </wux-col>
+<!-- 文章数 -->
+              <wux-col span="4">
+                <view class='tagtime'>
+                  <view class="placeholder">文章数：{{item.num}}</view>
+                </view>
+              </wux-col>
+            </wux-row>    
+              </view>
+            <wux-divider show-text="{{ false }}" />
+            </wux-col>
+            
+        </wux-row>
+    </view>
+</view>
+
+

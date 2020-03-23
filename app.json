@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/about/about",
+    "pages/friendlink/friendlink",
+    "pages/detail/detail",
+    "pages/tagarticle/tagarticle"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "JuneBao",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "backgroundColor": "#f0f4f6",
+    "selectedColor": "77c0f7",
+    "list": [
+      {
+        "color": "#09bb07",
+        "pagePath": "pages/index/index",
+        "text": "博客",
+        "iconPath": "static/image/icon/blog.png",
+        "selectedIconPath": "static/image/icon/blog_c.png"
+      },
+      {
+        "color": "#09bb07",
+        "pagePath": "pages/friendlink/friendlink",
+        "text": "标签",
+        "iconPath": "static/image/icon/tagso.png",
+        "selectedIconPath": "static/image/icon/tagso_c.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "static/image/icon/About.png",
+        "selectedIconPath": "static/image/icon/About_c.png"
+      }
+    ]
+  }
+}

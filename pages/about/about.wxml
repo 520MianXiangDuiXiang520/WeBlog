@@ -1,0 +1,50 @@
+<!--pages/about.wxml-->
+<image class='background' src="../../static/image/bg/bg.png" mode="aspectFill"></image>
+<view class="container">
+	<view class="userinfo">
+		<image class="userinfo-avatar" src="../../static/image/me/me.jpg" background-size="cover"></image>
+		<text class="userinfo-nickname">Junebao</text>
+        <view class="userinfo-desc">去爱， 去努力</view>
+	</view>
+</view>
+<wux-grids wux-class="grid-box">
+    <wux-grid is-link data-clipboard="https://github.com/520MianXiangDuiXiang520" bind:click="clipboard">
+        <view class="grid-title">开源</view>
+        <view class="grid-desc">
+            <wux-icon wux-class="grid-icon" type="ios-eye" size="18" />
+            <view>GitHub</view>
+        </view>
+    </wux-grid>
+    <wux-grid bindtap="version">
+        <view class="grid-title">版本</view>
+        <view class="grid-desc">
+            <wux-icon wux-class="grid-icon" type="ios-ice-cream" size="18" />
+            <view>Version</view>
+        </view>
+    </wux-grid>
+    <wux-grid bindtap="power">
+        <view class="grid-title">Power</view>
+        <view class="grid-desc">
+            <wux-icon wux-class="grid-icon" type="ios-bonfire" size="18" />
+            <view>power</view>
+        </view>
+    </wux-grid>
+</wux-grids>
+
+<wux-cell-group>
+    <wux-cell title="Github" is-link data-clipboard="https://github.com/520MianXiangDuiXiang520" bind:click="clipboard">
+        <wux-icon wux-class="icon" slot="header" type="logo-github" size="22" />
+    </wux-cell>
+    <wux-cell title="CSDN" is-link data-clipboard="https://me.csdn.net/zjbyough" bind:click="clipboard">
+        <wux-icon wux-class="icon" slot="header" type="ios-code" size="22" />
+    </wux-cell>
+    <wux-cell title="Email" is-link data-clipboard="15364968962@163.com" bind:click="clipboard">
+        <wux-icon wux-class="icon" slot="header" type="ios-mail" size="22" />
+    </wux-cell>
+</wux-cell-group>
+
+
+
+
+
+
