@@ -13,30 +13,33 @@ Page({
     page_count: 0,
     page: 1,
     loadingHidden: false,
-    page_id: -1
+    page_id: -1,
+    tag_id: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const page_id = options['id']
+    const tag_id = options['id']
+    this.tag_id = Number(tag_id)
     wx.request({
-      url: 'https://junebao.top:8000/junblog/?size=' + this.data.page_size.toString() +
-        "&page=" + this.data.page.toString() + "&tag=" + page_id.toString() + "&no=" + Date.parse(new Date()),
-      // 接口调用成功的回调函数
-      success: (data) => {
-        // 绑定数据
-        this.setData({
-          ibooklist: data.data.data.results,
-          loadingHidden: true,
-          page_count: data.data.data.count,
-          page_id: page_id
-        }),
-          console.log(data.data.data.results)
-        wx.hideLoading()
-
-      },
+      url: 'https://junebao.top:8888/api/article/list',
+        method: "post",
+        data:{
+          page: this.data.page,
+          pageSize: this.data.page_size,
+          tag: this.tag_id
+        },
+        success: (data) => {
+          // 绑定数据
+          this.setData({
+            ibooklist: this.data.ibooklist.concat(data.data.articleList),
+            loadingHidden: true,
+            page_count: data.data.total,
+          }),
+            wx.hideLoading()
+        },
       fail: () => {
         wx.hideLoading(),
           wx.showToast({
@@ -51,15 +54,19 @@ Page({
     if ((!this.data.noinfo) && this.data.page < Math.ceil(this.data.page_count / this.data.page_size)) {
       this.data.page++
       wx.request({
-        url: 'https://junebao.top:8000/junblog/?size=' + this.data.page_size.toString() +
-          "&page=" + this.data.page.toString() + "&tag=" + this.data.page_id.toString() + "&no=" + Date.parse(new Date()),
-        // 接口调用成功的回调函数
+        url: 'https://junebao.top:8888/api/article/list',
+        method: "post",
+        data:{
+          page: this.data.page,
+          pageSize: this.data.page_size,
+          tag: this.tag_id
+        },
         success: (data) => {
           // 绑定数据
           this.setData({
-            ibooklist: this.data.ibooklist.concat(data.data.data.results),
+            ibooklist: this.data.ibooklist.concat(data.data.articleList),
             loadingHidden: true,
-            page_count: data.data.data.count,
+            page_count: data.data.total,
           }),
             wx.hideLoading()
         },
@@ -80,7 +87,6 @@ Page({
   },
   detail: function (event) {
     let index = event.currentTarget.dataset.index;
-    console.log(this.data.id)
     wx.navigateTo({
       url: '../detail/detail?id=' + index,
     })
@@ -129,15 +135,19 @@ Page({
     if ((!this.data.noinfo) && this.data.page < Math.ceil(this.data.page_count / this.data.page_size)) {
       this.data.page++
       wx.request({
-        url: 'https://junebao.top:8000/junblog/?size=' + this.data.page_size.toString() +
-          "&page=" + this.data.page.toString() + "&tag=" + this.data.page_id.toString() + "&no=" + Date.parse(new Date()),
-        // 接口调用成功的回调函数
+        url: 'https://junebao.top:8888/api/article/list',
+        method: "post",
+        data:{
+          page: this.data.page,
+          pageSize: this.data.page_size,
+          tag: this.tag_id
+        },
         success: (data) => {
           // 绑定数据
           this.setData({
-            ibooklist: this.data.ibooklist.concat(data.data.data.results),
+            ibooklist: this.data.ibooklist.concat(data.data.articleList),
             loadingHidden: true,
-            page_count: data.data.data.count,
+            page_count: data.data.total,
           }),
             wx.hideLoading()
         },

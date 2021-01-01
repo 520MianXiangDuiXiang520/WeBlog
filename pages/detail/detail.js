@@ -22,23 +22,27 @@ Page({
   onLoad: function (options) {
     const _ts = this;
     wx.request({
-      url: 'https://junebao.top:8000/junblog/detail/' + options['id'],
+      url: 'https://junebao.top:8888/api/article/detail',
+      method:'POST',
+      data:{
+        articleId: Number(options['id'])
+      },
       // 接口调用成功的回调函数
       success: (data) => {
         // 绑定数据
-        console.log(options)
+        console.log(data.data)
         this.setData({
-          title: data.data.data.title,
-          article_md: data.data.data.article,
-          create_time: data.data.data.create_time,
-          next: data.data.data.next,
-          previous: data.data.data.previous,
-          tags: data.data.data.tags,
+          title: data.data.title,
+          article_md: data.data.text,
+          create_time: data.data.createTime,
+          next: 0,
+          previous: 0,
+          tags: [],
           firstloadingHidden: true,
           loadingHidden: false
         })
         let todata = app.towxml.toJson(
-          data.data.data.article,               // `markdown`或`html`文本内容
+          data.data.text,               // `markdown`或`html`文本内容
           'markdown'              // `markdown`或`html`
         );
         // todata = app.towxml.initData(todata, {

@@ -7,8 +7,14 @@
   background-size:100% 100%;
   z-index: -1;
 }
+.tag_info {
+  color: #767677;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
 .tagname{
-  font-size: 54rpx;
+  font-size: 48rpx;
+  color: teal;
   margin-bottom: 16rpx;
 }
 .main{

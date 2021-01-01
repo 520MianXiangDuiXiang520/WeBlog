@@ -16,12 +16,14 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://junebao.top:8000/junblog/tags',
+      url: 'https://junebao.top:8888/api/tag/list',
+      method: 'POST',
+      data:{},
       // 接口调用成功的回调函数
       success: (data) => {
-        // 绑定数据
+        console.log(data.data)
         this.setData({
-          tags: data.data.data,
+          tags: data.data.tags,
           loadingHidden: true,
         }),
           console.log(data.data.data)

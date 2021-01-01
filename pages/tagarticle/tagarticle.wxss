@@ -1,4 +1,3 @@
-/* pages/tagarticle/tagarticle.wxss */
 .book_list{
   display: flex;
   padding-left: 20rpx;
@@ -26,15 +25,20 @@
 }
 .book_name{
   font-size: 48rpx;
-  /* color:#fff; */
+  color: teal;
   font-family: FZYaoti;
 }
+.article_info {
+  color: #767677;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
 .book_introduction{
-  font-size: 25rpx;
-  /* color: #fff; */
+  font-size: 30rpx;
+  color: #303133;
   padding-top: 20rpx;
   font-family: KaiTi;
-  border-bottom: 2rpx solid #ccc;
+  /* border-bottom: 2rpx solid #ccc; */
 }
 .article_time{
   font-size: 25rpx;

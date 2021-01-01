@@ -41,6 +41,9 @@
     <wux-cell title="Email" is-link data-clipboard="15364968962@163.com" bind:click="clipboard">
         <wux-icon wux-class="icon" slot="header" type="ios-mail" size="22" />
     </wux-cell>
+    <wux-cell title="Web" is-link data-clipboard="https://junebao.top" bind:click="clipboard">
+        <wux-icon wux-class="icon" slot="header" type="ios-attach" size="22" />
+    </wux-cell>
 </wux-cell-group>
 
 

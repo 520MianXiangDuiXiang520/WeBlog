@@ -20,17 +20,21 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://junebao.top:8000/junblog/?size=' + this.data.page_size.toString() +
-        "&page=" + this.data.page.toString() + "&no=" + Date.parse(new Date()),
+      url: 'https://junebao.top:8888/api/article/list',
+      method: "post",
+      data:{
+        page: this.data.page,
+        pageSize: this.data.page_size,
+      },
       // 接口调用成功的回调函数
       success: (data) => {
         // 绑定数据
+        console.log(data)
         this.setData({
-          ibooklist: data.data.data.results,
+          ibooklist: data.data.articleList,
           loadingHidden: true,
-          page_count: data.data.data.count,
+          page_count: data.data.total,
         }),
-          console.log(data.data.data.results)
           wx.hideLoading()
         
       },
@@ -48,15 +52,18 @@ Page({
     if ((!this.data.noinfo) && this.data.page < Math.ceil(this.data.page_count / this.data.page_size)) {
       this.data.page ++
       wx.request({
-        url: 'https://junebao.top:8000/junblog/?size=' + this.data.page_size.toString() +
-          "&page=" + this.data.page.toString() + "&no=" + Date.parse(new Date()),
-        // 接口调用成功的回调函数
+        url: 'https://junebao.top:8888/api/article/list',
+        method: "post",
+        data:{
+          page: this.data.page,
+          pageSize: this.data.page_size,
+        },
         success: (data) => {
           // 绑定数据
           this.setData({
-            ibooklist: this.data.ibooklist.concat(data.data.data.results),
+            ibooklist: this.data.ibooklist.concat(data.data.articleList),
             loadingHidden: true,
-            page_count: data.data.data.count,
+            page_count: data.data.total,
           }),
             wx.hideLoading()
         },
@@ -126,15 +133,18 @@ Page({
     if ((!this.data.noinfo) && this.data.page < Math.ceil(this.data.page_count / this.data.page_size)) {
       this.data.page ++
       wx.request({
-        url: 'https://junebao.top:8000/junblog/?size=' + this.data.page_size.toString() +
-          "&page=" + this.data.page.toString() + "&no=" + Date.parse(new Date()),
-        // 接口调用成功的回调函数
+        url: 'https://junebao.top:8888/api/article/list',
+        method: "post",
+        data:{
+          page: this.data.page,
+          pageSize: this.data.page_size,
+        },
         success: (data) => {
           // 绑定数据
           this.setData({
-            ibooklist: this.data.ibooklist.concat(data.data.data.results),
+            ibooklist: this.data.ibooklist.concat(data.data.articleList),
             loadingHidden: true,
-            page_count: data.data.data.count,
+            page_count: data.data.total,
           }),
             wx.hideLoading()
         },

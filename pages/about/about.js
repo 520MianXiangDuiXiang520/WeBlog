@@ -18,7 +18,7 @@ Page({
   version: function (link) {
     wx.showModal({
       title: "Version",
-      content: "version 1.1.0",
+      content: "version 1.2.0",
       confirmText: "确定",
       confirmColor: '#09bb07',
       cancelColor: '#c6eac6',
@@ -31,7 +31,7 @@ Page({
   power: function (link) {
     wx.showModal({
       title: "Power",
-      content: "Power By Django and WuUI",
+      content: "Power By Gin and WuUI",
       confirmText: "确定",
       confirmColor: '#09bb07',
       cancelColor: '#c6eac6',
